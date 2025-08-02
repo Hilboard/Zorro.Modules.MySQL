@@ -5,7 +5,7 @@
 	<ImplicitUsings>enable</ImplicitUsings>
 	<Nullable>enable</Nullable>
 	<PackageId>Zorro.Modules.MySQL</PackageId>
-	<Version>0.0.1</Version>
+	<Version>0.1.0</Version>
 	<Authors>Artem</Authors>
 	<Authors>Hilboard</Authors>
 	<Description>MySQL module for Zorro</Description>
@@ -16,12 +16,7 @@
 
   <ItemGroup>
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.3" />
-    <PackageReference Include="Zorro" Version="0.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-  	<Folder Include="Properties\" />
-  	<Folder Include="Services\" />
+    <PackageReference Include="Zorro" Version="0.1.6" />
   </ItemGroup>
 
 </Project>

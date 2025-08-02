@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage;
 using MySqlConnector;
 
 namespace Zorro.Services;
@@ -8,11 +9,14 @@ public static class MySQLService
 {
     public static MySqlDbContextOptionsBuilder GetDefaultOptions(MySqlDbContextOptionsBuilder builder)
     {
+        /*
         var optionsBuilder = builder.EnableRetryOnFailure(
             maxRetryCount: 5,
             maxRetryDelay: TimeSpan.FromSeconds(30),
             errorNumbersToAdd: null
         );
+        */
+        var optionsBuilder = builder.ExecutionStrategy(_ => new NonRetryingExecutionStrategy(_));
         return optionsBuilder;
     }
 
